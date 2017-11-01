@@ -17,6 +17,7 @@ http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/mu
         <spring:import resource="classpath:munit-examples.xml"/>
     </spring:beans>
     <munit:test name="sayHello_payloadReturnsHello_True" description="Calling sayHellow flow sets payload to Hello">
+        <set-payload value="#[&quot;Hello&quot;]" doc:name="Set Payload: to Hello"/>
         <munit:assert-payload-equals message="Oops..payload is not Hello" expectedValue="#[&quot;Hello&quot;]" doc:name="Assert Payload"/>
     </munit:test>
 </mule>
